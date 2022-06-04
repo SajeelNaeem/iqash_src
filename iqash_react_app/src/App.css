@@ -16,7 +16,7 @@
 }
 
 input {
-  color: white !important;
+  color: #34568B !important;
 }
 
 .App-header {
@@ -27,7 +27,8 @@ input {
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: rgba(39, 20, 204, 0.815);
+  color: #34568B;
+  /* color: rgba(39, 20, 204, 0.815); */
 }
 
 .App-link {
