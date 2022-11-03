@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import ButtonGroup from './components/ButtonGroup'
+import ButtonGroup from './components/home/ButtonGroup'
 import NavigationBar from './components/NavigationBar';
 import {BrowserRouter as Router, Route, Routes} from 'react-router-dom'
 import { Container } from '@mui/material';
@@ -8,9 +8,9 @@ import CreditcardController from './controllers/CreditcardController';
 import Cryptocurrency from './components/cryptocurrency/Cryptocurrency';
 import Paypal from './components/paypal/Paypal';
 import Klarna from './components/klarna/Klarna';
-import Products from './components/ProductsPage';
-import Pricing from './components/PricingPage';
-import Error from './components/Error';
+import Products from './components/pages/ProductsPage';
+import Pricing from './components/pages/PricingPage';
+import Error from './components/pages/Error';
 
 
 

@@ -56,7 +56,7 @@ export default function CreditcardForm({onConfirm, response}) {
   const [error, setError] = React.useState(false)
 
   React.useEffect(() => {
-    // Set errorMessage only if text is equal or bigger than MAX_LENGTH
+    // Set errorMessage only if validation of the text fields were not successful
     setError(error)
   }, [error]);
 

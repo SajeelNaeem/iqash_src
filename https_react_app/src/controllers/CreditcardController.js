@@ -5,6 +5,12 @@ import axios from 'axios'
 const instance = axios.create({
     baseURL: 'http://localhost:9000'
   });
+  const config = {
+    headers: {
+      "Access-Control-Allow-Origin": "*",
+      "Access-Control-Allow-Methods": "GET,PUT,POST,DELETE,PATCH,OPTIONS"
+    }
+  }
 
 export default function CreditcardController(){
     const [response, setResponse] = React.useState('')
@@ -13,18 +19,12 @@ export default function CreditcardController(){
     const onConfirm = async (data) => {
         console.log('I am in Controller!')
 
-        await instance.post('/payment', data).then((resp) => { 
+        await instance.post('/payment', data, config).then((resp) => { 
             console.log('post request done')
             setResponse(resp.data)
             return resp.data
         })
         .catch(err => {console.log(err)})
-
-
-        // await instance.get('/payment').then(() => {
-        //     console.log('get request done')
-        // })
-        // .catch(err => {console.log(err)})       
     }
 
 

@@ -1,7 +1,7 @@
 var express = require('express'); 
 var router = express.Router();
 
-var authRequest = require('../paymentz/authTokenMerchant')
+var authRequest = require('../paymentz/authToken')
 var paymentRequest = require('../paymentz/payment')
 
 
@@ -11,7 +11,6 @@ router.post("/", async function(req, res, next) {
     // getting all the fields from the request
     const {currency, amount, creditcardnumber, expirymonth, 
         expiryyear, ownername, cvccode}  = req.body
-        
 
     // checks if any field is empty then it should send the failure response
     if( !currency || !amount || !creditcardnumber || !expirymonth || 

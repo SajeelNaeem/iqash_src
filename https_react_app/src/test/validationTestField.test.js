@@ -29,20 +29,24 @@ test('white spaces are not allowed', () => {
 
 // should not allow numerics in alphabetic textfield
 test('numerics are not allowed', () => {
-    expect(validation('Sajeel7', 7, false)).toBe('The input should contain only alphabets with only one white space between Namesq');
+    expect(validation('Sajeel7', 7, false))
+    .toBe('The input should contain only alphabets with only one white space between Names');
   });
 
 // should not allow special characters in alphabetic textfield
 test('special characters are not allowed', () => {
-    expect(validation('Sajeel Naeem?', 20, false)).toBe('The input should contain only alphabets with only one white space between Names');
+    expect(validation('Sajeel Naeem?', 20, false))
+    .toBe('The input should contain only alphabets with only one white space between Names');
   });
 
-// can have one consective empty white space in alphabetic textfield
+// can have one consecutive empty white space in alphabetic textfield
 test('too much white spaces', () => {
-    expect(validation(' Sajeel  Naeem  ', 30, false)).toBe('The input should contain only alphabets with only one white space between Names');
+    expect(validation(' Sajeel  Naeem  ', 30, false))
+    .toBe('The input should contain only alphabets with only one white space between Names');
   });
 
 // Only one name is not valid in the Owner Name field; should contain at least First name and Last name 
-test('too much white spaces', () => {
-  expect(validation('  Sajeel  Naeem  ', 30, false)).toBe('The input should contain only alphabets with only one white space between Names');
+test('should contain First and Last Names', () => {
+  expect(validation('Sajeel', 30, false))
+  .toBe('The input should contain only alphabets with only one white space between Names');
 });

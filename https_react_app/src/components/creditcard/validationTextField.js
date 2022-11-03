@@ -6,7 +6,6 @@ export default function validation(text, maxLength, numericType){
 
     // check maximum length of the textfield 
     errormessage = checkMaxlength(text, maxLength)
-    // errormessage = checkCharacters(text, numericType)
 
     // check input type of the textfield 
     if(!errormessage){
@@ -55,6 +54,4 @@ const checkCharacters = (text, numericType) => {
     }
 }
 
-// if(text.match(/^(?=.*[0-9])(?=.*[a-zA-Z])([a-zA-Z0-9]+)$/)){
-
-    // }
+// if(text.match(/^(?=.*[0-9])(?=.*[a-zA-Z])([a-zA-Z0-9]+)$/))

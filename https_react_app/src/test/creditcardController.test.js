@@ -7,15 +7,6 @@ const instance = axios.create({
     baseURL: 'http://localhost:9000'
 });
 
-// const validdata = {
-//     creditcardnumber: '4111110000000021',
-//     expirymonth: '12',
-//     expiryyear: '2030',
-//     ownername: 'Max Müller',
-//     cvccode: '123',
-//     currency: 'EUR',
-//     amount: '50.00'
-//   }
 
 const validdata = {
     currency: 'EUR',
@@ -29,7 +20,7 @@ const validdata = {
 
 
 describe ('POST /payments', () => {
-    describe ('given a payload', () => {
+    describe ('given a valid payload', () => {
 
         test('should respond with a 200 status code', async () => {
             const response = await instance.post('/payment', validdata).then((resp) => { 
@@ -60,10 +51,10 @@ describe ('POST /payments', () => {
             ownername: 'Max Muller',
             cvccode: '123'},
 
+            {},
+
             {currency: 'EUR',
             creditcardnumber: '4111110000000021',
-            expirymonth: '12',
-            expiryyear: '2030',
             ownername: 'Max Muller',
             cvccode: '123'},
 
@@ -123,9 +114,7 @@ describe ('POST /payments', () => {
             amount: '50.00',
             creditcardnumber: '4111110000000021',
             ownername: 'Max Muller',
-            cvccode: '123'},
-
-            {}
+            cvccode: '123'}
         ]
 
 

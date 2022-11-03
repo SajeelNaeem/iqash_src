@@ -9,9 +9,11 @@ const instance = axios.create({
 async function callRequest(token, payload) {
 	var path='/transactionServices/REST/v1/payments';
 
+	var transId = Date.now()
+
 	//	- have to generate checksum 
 	//		- <memberId>|<secureKey>|<merchantTransactionId>|<amount>
-	var transId = Date.now()
+	
 	var values= `12754|DQkJiaoERw7uMO1754DlSYDreb4gmXXO|${transId}|${payload.amount}`;
 	var md5 = require('crypto').createHash('md5').update(values).digest('hex');
 
